@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: auto;
+            background-color: #171919;
+            overflow-x: hidden;
+        }
+        .homeBox {
+            width: 100vw;
+            height: 100vh;
+            background-image: radial-gradient( rgba(0,0,0,0.1), rgba(0, 0, 0, 0.6));
+            position: relative;
+            overflow: hidden;
+        }
+        .bgVideo{
+            width: auto;
+            height: 110vh;
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .side-menu{
+            position: fixed;
+            z-index: 1;
+            right: 0;
+            width: 7vw;
+            height: 100vh;
+            border-left: solid 1px rgb(255,255,255,0.3);
+        }
+        .side-logo{
+            width: 100%;
+            height: 18vh;
+            background-color: #64B915;
+            position: relative;
+        }
+        .logoText-box{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: -2em;
+        }
+        .logo-text{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 3.5vw;
+            font-weight: bolder;
+            transform: rotate(-90deg);
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        .line{
+            width: 1px;
+            height: 25px;
+            background-color: rgb(255,255,255,0.5);
+            position: absolute;
+            bottom: -5em;
+        }
+        .icons{
+            width: auto;
+            height: auto;
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+         .material-symbols-outlined {
+             color: white;
+             font-size: 40px;
+             font-variation-settings: 'FILL' 0,
+             'wght' 300,
+             'GRAD' 0,
+             'opsz' 48
+         }
+         .icons a{
+             width: fit-content;
+             height: fit-content;
+             text-decoration: none;
+         }
+         .weatheri{
+             width: 7vw;
+             height: auto;
+             text-align: center;
+             padding-bottom: 8vh;
+         }
+         .weatheri div p{
+             color: #ffffff;
+             font-family: "Fira Sans",sans-serif;
+             font-weight: lighter;
+             font-size: 11px;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+         }
+        .servicesi{
+            width: 7vw;
+            height: auto;
+            text-align: center;
+            padding-bottom: 8vh;
+        }
+        .servicesi div p{
+            color: #ffffff;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: lighter;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ticket{
+            width: 7vw;
+            height: auto;
+            text-align: center;
+            padding-bottom: 8vh;
+        }
+        .ticket div p{
+            color: #ffffff;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: lighter;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hotel{
+            width: 7vw;
+            height: auto;
+            text-align: center;
+        }
+        .hotel div p{
+            color: #ffffff;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: lighter;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .location p{
+            color: #ffffff;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: lighter;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .locatorBox{
+            width: auto;
+            height: 17em;
+            position: absolute;
+            z-index: 0;
+            left: -50em;
+            bottom: 5em;
+            opacity: 0;
+            transition: 1s ease-in-out;
+        }
+        .locator{
+            width: 100%;
+            height: 100%;
+        }
+        .l1{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+        }
+        .l1 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 22px;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .l1 div{
+            width: 130px;
+            height: 2px;
+            background-color: rgb(255,255,255,0.5);
+            margin-left: 30px;
+        }
+        .l2{
+            width: 100%;
+            height: 23%;
+            margin-top: 0;
+        }
+        .l2 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 80px;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .l3{
+            width: 100%;
+            height: 35%;
+            align-items: center;
+        }
+        .l3 span{
+            margin: 50px;
+            cursor: pointer;
+        }
+        .nagivator{
+            width: auto;
+            height: 5em;
+            display: flex;
+            justify-content: left;
+            position: absolute;
+            left: 50px;
+            right: 50px;
+            bottom: 5vh;
+        }
+        .n1,.n2, .n3{
+            width: 22em;
+            height: 100%;
+            z-index: 3;
+        }
+        .n1 .barBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .n1 .barBox .bar{
+            width: 100%;
+            height: 4px;
+            background-color: rgb(255,255,255,0.5);
+            margin: 0 50px;
+            transition: 0.5s;
+            position: relative;
+            z-index: 2;
+        }
+        .n1 .textBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .n1 .textBox p{
+            color: white;
+            font-family: "Fira Sans", sans-serif;
+        }
+        .n1 .textBox .p1{
+            font-size: 2vw;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            margin-left: 50px;
+        }
+        .n1 .textBox .p2{
+            font-size: 1.5vw;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            text-transform: capitalize;
+            margin-right: 50px;
+        }
+        .n1:hover .barBox .bar{
+            background-color: #64B915;
+        }
+        .n1:hover .locatorBox{
+            left: 0;
+            opacity: 1;
+        }
+        .n2 .barBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .n2 .barBox .bar{
+            width: 100%;
+            height: 4px;
+            background-color: rgb(255,255,255,0.5);
+            margin: 0 50px;
+        }
+        .n2 .textBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .n2 .textBox p{
+            color: white;
+            font-family: "Fira Sans", sans-serif;
+        }
+        .n2 .textBox .p1{
+            font-size: 2vw;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            margin-left: 50px;
+        }
+        .n2 .textBox .p2{
+            font-size: 1.5vw;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            text-transform: capitalize;
+            margin-right: 50px;
+        }
+        .n2:hover .barBox .bar{
+            background-color: #64B915;
+        }
+        .n2:hover .locatorBox{
+            width: 60%;
+            left: 0;
+            opacity: 1;
+        }
+
+        .n3 .barBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .n3 .barBox .bar{
+            width: 100%;
+            height: 4px;
+            background-color: rgb(255,255,255,0.5);
+            margin: 0 50px;
+        }
+        .n3 .textBox{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .n3 .textBox p{
+            color: white;
+            font-family: "Fira Sans", sans-serif;
+        }
+        .n3 .textBox .p1{
+            font-size: 2vw;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            margin-left: 50px;
+        }
+        .n3 .textBox .p2{
+            font-size: 1.5vw;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            text-transform: capitalize;
+            margin-right: 50px;
+        }
+        .n3:hover .barBox .bar{
+            background-color: #64B915;
+        }
+        .n3:hover .locatorBox{
+            width: 90%;
+            left: 0;
+            opacity: 1;
+        }
+        .travel{
+            position: absolute;
+            width: auto;
+            height: auto;
+            right: 7vw;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 200px;
+            line-height: 0.7em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.07;
+        }
+        .travel .text{
+            margin-left: 50%;
+        }
+
+        /*weather*/
+
+        .weatherBox{
+            width: 100vw;
+            height: 100vh;
+            max-height: 1300px;
+            background-color: transparent;
+            rgb(0, 0, 2);
+            overflow: hidden;
+            position: relative;
+        }
+        .weather{
+            position: absolute;
+            z-index: -3;
+            width: auto;
+            height: auto;
+            right: 7vw;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 150px;
+            line-height: 0.7em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.07;
+        }
+        .weather .text{
+            margin-left: 50%;
+        }
+        .mmMapBox{
+            position: absolute;
+            z-index: 2;
+            width: 525px;
+            height: 525px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .mmMap{
+            width: 1050px;
+            min-width: 1050px;
+            height: auto;
+            position: absolute;
+            z-index: -2;
+            top: 55%;
+            transform: translateY(-50%);
+        }
+        .circle{
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background-color: #64B915;
+            position: absolute;
+            z-index: 3;
+            transition: 1s ease-in-out;
+        }
+        .c1{
+            top: 230px;
+            left: 260px;
+        }
+        .c2{
+            top: 300px;
+            left: 195px;
+        }
+        .c3{
+            top: 25px;
+            left: 280px;
+        }
+        .circle:hover{
+            filter: drop-shadow(0 0 15px #64B915) brightness(2);
+        }
+        .showBox{
+            width: 350px;
+            height: 300px;
+            background-color: rgb(15, 16, 16);
+            border-radius: 50px;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            display: none;
+        }
+        .sC1{
+            margin-left: 1400px;
+            margin-top: -150px;
+        }
+        .circle:hover .sC1{
+            margin-left: 50px;
+            opacity: 1;
+            display: block;
+        }
+        .sC2{
+            margin-left: -1400px;
+            margin-top: -150px;
+        }
+        .circle:hover .sC2{
+            margin-left: -380px;
+            opacity: 1;
+            display: block;
+        }
+        .sC3{
+            margin-left: 1400px;
+            margin-top: 0;
+        }
+        .circle:hover .sC3{
+            margin-left: 50px;
+            opacity: 1;
+            display: block;
+        }
+        .showBox .container{
+            width: 70%;
+            height: 70%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .showBox .text1{
+            width: 100%;
+            height: 28%;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 50px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: white;
+        }
+        .showBox .text2{
+            width: 100%;
+            height: 20%;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 15px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+            margin-top: 5px;
+            margin-left: 4px;
+        }
+        .showBox .wIcons{
+            width: 100%;
+            height: 50%;
+            display: flex;
+        }
+         .I1 {
+             width: 100%;
+             height: 60%;
+             font-size: 50px;
+             color: #64B915;
+             text-align: center;
+             font-variation-settings:
+                     'FILL' 0,
+                     'wght' 300,
+                     'GRAD' 0,
+                     'opsz' 48
+         }
+         .weatherStatus .text {
+             width: 100%;
+             height: 40%;
+             font-family: "Fira Sans", sans-serif;
+             font-weight: 100;
+             letter-spacing: 1px;
+             text-align: center;
+             text-transform: capitalize;
+             color: white;
+         }
+        .temp .text {
+            width: 100%;
+            height: 40%;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: capitalize;
+            color: white;
+        }
+        .wind .text {
+            width: 100%;
+            height: 40%;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: lowercase;
+            color: white;
+        }
+        .showBox .wIcons .weatherStatus{
+            width: 30%;
+            height: 100%;
+            margin-right: 5%;
+        }
+        .showBox .wIcons .temp{
+            width: 30%;
+            height: 100%;
+            margin-right: 5%;
+        }
+        .showBox .wIcons .wind{
+            width: 30%;
+            height: 100%;
+        }
+
+        .locationIcon{
+            position: relative;
+            left: -14vw;
+            top: 60px;
+        }
+        .locationIcon img{
+            width: 28vw;
+            height: auto;
+        }
+        .wLocator{
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            left: 15vw;
+            width: 50vw;
+            height: 150px;
+        }
+        .wl1{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .wl1 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1.3em;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .wl1 div{
+            width: 7em;
+            height: 2px;
+            background-color: rgb(255,255,255,0.5);
+            margin-left: 30px;
+        }
+        .wl2{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+        }
+        .wl2 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 4.5em;
+            font-weight: bolder;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .coordinate{
+            width: fit-content;
+            height: auto;
+            position: absolute;
+            bottom: 11em;
+            left: -3vw;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1vw;
+            font-weight: 100;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: white;
+            transform: rotate(-90deg);
+        }
+        /*Product Box*/
+        .productsBox{
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            position: relative;
+            top: 50px;
+            padding: 3em 0;
+        }
+        .services{
+            position: absolute;
+            width: fit-content;
+            height: auto;
+            left: 5vw;
+            top: 40%;
+            transform: rotate(-90deg) translateY(-50%);
+            font-family: 'Fira Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 150px;
+            line-height: 0.7em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.07;
+        }
+        .services .text{
+            margin-left: 40%;
+        }
+        .P1{
+            width: 20%;
+            min-width: 210px;
+            height: 70vh;
+            max-height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-left: 20%;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 6;
+        }
+        .p1-container{
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient( rgba(0,0,0,0.1), rgba(0, 0, 0, 0.6));
+            position: absolute;
+            z-index: 3;
+            transition: 1s ease-in-out;
+        }
+        .P1:hover .p1-container{
+            opacity: 0;
+        }
+        .P1 img{
+            width: auto;
+            height: 100%;
+        }
+        .P1 p{
+            font-family: "Fira Sans",sans-serif;
+            color: white;
+            font-size: 3.5vw;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        .kalawCoordinate{
+            width: auto;
+            height: fit-content;
+            position: absolute;
+            top: 100px;
+            left: -45px;
+            font-family: "Fira Sans", sans-serif;
+            font-size: .7rem;
+            font-weight: 100;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            transform: rotate(-90deg);
+        }
+        .P1 .btnBox{
+            width: 130px;
+            height: 50px;
+            position: absolute;
+            right: -100px;
+            transform: rotate(-90deg);
+            background-color: #64B915;
+            transition: 1s ease-in-out;
+        }
+       .P1 .btnBox a{
+           width: 100%;
+           height: 100%;
+           text-decoration: none;
+           display: flex;
+           align-items: center;
+       }
+        .P1 .btnBox a div{
+            width: 50%;
+            height: fit-content;
+            display: inline;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: white;
+            margin: 20px 0 20px 15px;
+        }
+        .P1 .btnBox a span{
+            width: fit-content;
+            height: fit-content;
+        }
+        .P1:hover .btnBox{
+            right: -25px;
+            z-index: 4;
+        }
+
+        .P2{
+            width: 20%;
+            min-width: 210px;
+            height: 70vh;
+            max-height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            bottom: 3em;
+        }
+        .p2-container{
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient( rgba(0,0,0,0.1), rgba(0, 0, 0, 0.6));
+            position: absolute;
+            z-index: 3;
+            transition: 1s ease-in-out;
+        }
+        .P2:hover .p2-container{
+            opacity: 0;
+        }
+        .P2 img{
+            width: auto;
+            height: 100%;
+        }
+        .P2 p{
+            font-family: "Fira Sans",sans-serif;
+            color: white;
+            font-size: 3.5vw;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        .ngapaliCoordinate{
+            width: auto;
+            height: fit-content;
+            position: absolute;
+            top: 100px;
+            left: -45px;
+            font-family: "Fira Sans", sans-serif;
+            font-size: .7rem;
+            font-weight: 100;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            transform: rotate(-90deg);
+        }
+        .P2 .btnBox{
+            width: 130px;
+            height: 50px;
+            position: absolute;
+            right: -100px;
+            transform: rotate(-90deg);
+            background-color: #44a7c4;
+            transition: 1s ease-in-out;
+        }
+        .P2 .btnBox a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .P2 .btnBox a div{
+            width: 50%;
+            height: fit-content;
+            display: inline;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: white;
+            margin: 20px 0 20px 15px;
+        }
+        .P2 .btnBox a span{
+            width: fit-content;
+            height: fit-content;
+        }
+        .P2:hover .btnBox{
+            right: -25px;
+            z-index: 4;
+        }
+
+        .P3{
+            width: 20%;
+            min-width: 210px;
+            height: 70vh;
+            max-height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .p3-container{
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient( rgba(0,0,0,0.1), rgba(0, 0, 0, 0.6));
+            position: absolute;
+            z-index: 3;
+            transition: 1s ease-in-out;
+        }
+        .P3:hover .p3-container{
+            opacity: 0;
+        }
+        .P3 img{
+            width: auto;
+            height: 100%;
+        }
+        .P3 p{
+            font-family: "Fira Sans",sans-serif;
+            color: white;
+            font-size: 3.5vw;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        .putaoCoordinate{
+            width: auto;
+            height: fit-content;
+            position: absolute;
+            top: 100px;
+            left: -45px;
+            font-family: "Fira Sans", sans-serif;
+            font-size: .7rem;
+            font-weight: 100;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            transform: rotate(-90deg);
+        }
+        .P3 .btnBox{
+            width: 130px;
+            height: 50px;
+            position: absolute;
+            right: -100px;
+            transform: rotate(-90deg);
+            background-color: #83a8c3;
+            transition: 1s ease-in-out;
+        }
+        .P3 .btnBox a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .P3 .btnBox a div{
+            width: 50%;
+            height: fit-content;
+            display: inline;
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: white;
+            margin: 20px 0 20px 15px;
+        }
+        .P3 .btnBox a span{
+            width: fit-content;
+            height: fit-content;
+        }
+        .P3:hover .btnBox{
+            right: -25px;
+            z-index: 4;
+        }
+
+        /* Air Tickets*/
+        .airtBox{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            max-height: 900px;
+        }
+        .airTicket{
+            position: absolute;
+            width: fit-content;
+            height: auto;
+            right: 7vw;
+            top: 0;
+            text-align: right;
+            font-family: 'Fira Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 150px;
+            line-height: 0.7em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.07;
+        }
+        .airTicket .text{
+            margin-right: -7vw;
+        }
+        .airtBox .container{
+            width: 100%;
+            height: 100%;
+        }
+        .airtBox .T1-box{
+            width: 100vw;
+            height: auto;
+            padding-top: 50px ;
+        }
+        .airtBox .T1{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        .airtBox .T1 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1.3em;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .airtBox .T1 div{
+            width: 8em;
+            height: 2px;
+            background-color: rgb(255,255,255,0.5);
+            margin-left: 30px;
+        }
+        .airtBox .T1-s{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+        }
+        .airtBox .T1-s p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .airtBox .imgBox{
+            width: 100vw;
+            height: 50%;
+            margin-top: -60px;
+        }
+        .airtBox .imgBox .img{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .airtBox .imgBox .imgT1-box{
+            width: 100%;
+            height: auto;
+        }
+        .airtBox .img img{
+            width: 800px;
+            padding-top: 50px;
+        }
+        .airtBox .imgT1{
+            width: 100%;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            margin-top: -40px;
+        }
+        .airtBox .imgT1 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1em;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .airtBox .imgT1 div{
+            width: 8em;
+            height: 2px;
+            background-color: rgb(255,255,255,0.5);
+            margin-left: 30px;
+        }
+        .airtBox .imgT1-s{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+        }
+        .airtBox .imgT1-s p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 2.2em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .airtBox .T2-box{
+            width: 100vw;
+            height: 30%;
+        }
+        .airtBox .T2-1{
+            width: 100vw;
+            height: 80%;
+            display: flex;
+            justify-content: left;
+            margin-top: -20px;
+        }
+        .airtBox .T2-1 .s1Box{
+            width: 30%;
+            height: 100%;
+            margin-left: 5%;
+        }
+        .airtBox .s1{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .airtBox .s1 .d1{
+            position: absolute;
+            left: -4em;
+            top: 3.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s1 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s1 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s1 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s1 .p1Text2{
+            position: absolute;
+            left:  10.5em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .T2-1 .s2Box{
+            width: 30%;
+            height: 100%;
+        }
+        .airtBox .s2{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .airtBox .s2 .d1{
+            position: absolute;
+            left: -4em;
+            top: 3.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s2 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s2 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s2 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s2 .p1Text2{
+            position: absolute;
+            left:  10.5em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .T2-1 .s3Box{
+            width: 30%;
+            height: 100%;
+            margin-right: 5%;
+        }
+        .airtBox .s3{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .airtBox .s3 .d1{
+            position: absolute;
+            left: -4em;
+            top: 3.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s3 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s3 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .airtBox .s3 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .s3 .p1Text2{
+            position: absolute;
+            left:  10.5em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .airtBox .T2-2{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .T2-2 .btnBox{
+            width: 200px;
+            height: 40px;
+            display: flex;
+        }
+        .airtBox .T2-2 .btn-txt{
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .airtBox .T2-2 .btn-txt p{
+            font-family: "Fira Sans",sans-serif;
+            font-size: 20px;
+            font-weight: 200;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+        .airtBox .T2-2 .btn{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Fira Sans",sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #64B915;
+        }
+        .airtBox .T2-2 span{
+            font-weight: 400;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .hotelBox{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            max-height: 900px;
+        }
+        .txtHotel{
+            position: absolute;
+            width: fit-content;
+            height: auto;
+            right: 7vw;
+            top: 0;
+            text-align: right;
+            font-family: 'Fira Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 150px;
+            line-height: 0.7em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+            opacity: 0.07;
+        }
+        .txtHotel .text{
+            margin-right: -7vw;
+        }
+        .hotelBox .container{
+            width: 100%;
+            height: 100%;
+        }
+        .hotelBox .imgBox{
+            width: 100vw;
+            height: 60%;
+        }
+        .hotelBox .imgBox .img{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .hotelBox .imgBox .imgT1-box{
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 50px;
+        }
+        .hotelBox .img img{
+            width: 800px;
+        }
+        .hotelBox .imgT1{
+            width: 100%;
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+        .hotelBox .imgT1 p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 1em;
+            font-weight: 100;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .hotelBox .imgT1 div{
+            width: 8em;
+            height: 2px;
+            background-color: rgb(255,255,255,0.5);
+            margin-left: 30px;
+        }
+        .hotelBox .imgT1-s{
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+        }
+        .hotelBox .imgT1-s p{
+            font-family: "Fira Sans", sans-serif;
+            font-size: 2.2em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            margin-left: 50px;
+        }
+        .hotelBox .T2-box{
+            width: 100vw;
+            height: 30%;
+        }
+        .hotelBox .T2-1{
+            width: 100vw;
+            height: 80%;
+            display: flex;
+            justify-content: left;
+            margin-top: -20px;
+        }
+        .hotelBox .T2-1 .s1Box{
+            width: 30%;
+            height: 100%;
+            margin-left: 5%;
+        }
+        .hotelBox .s1{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .hotelBox .s1 .d1{
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s1 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s1 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s1 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s1 .p1Text2{
+            position: absolute;
+            left:  6em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .T2-1 .s2Box{
+            width: 30%;
+            height: 100%;
+        }
+        .hotelBox .s2{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .hotelBox .s2 .d1{
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s2 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s2 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s2 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s2 .p1Text2{
+            position: absolute;
+            left:  6em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .T2-1 .s3Box{
+            width: 30%;
+            height: 100%;
+            margin-right: 5%;
+        }
+        .hotelBox .s3{
+            width: 280px;
+            height: 100%;
+            position: relative;
+        }
+        .hotelBox .s3 .d1{
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            font-family: "Fira Sans",sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s3 .d1Text{
+            position: absolute;
+            height: 72px;
+            left: .8em;
+            top: 0;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: 3px;
+            line-height: 36px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s3 .p1{
+            position: absolute;
+            left: -.5em;
+            top: 7em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: right;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transform: rotate(-90deg);
+        }
+        .hotelBox .s3 .p1Text1{
+            position: absolute;
+            left: 2.2em;
+            top: 3em;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .s3 .p1Text2{
+            position: absolute;
+            left:  6em;
+            top: 12em;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 100;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .hotelBox .T2-2{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .T2-2 .btnBox{
+            width: 200px;
+            height: 40px;
+            display: flex;
+        }
+        .hotelBox .T2-2 .btn-txt{
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hotelBox .T2-2 .btn-txt p{
+            font-family: "Fira Sans",sans-serif;
+            font-size: 20px;
+            font-weight: 200;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+        .hotelBox .T2-2 .btn{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Fira Sans",sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #64B915;
+        }
+        .hotelBox .T2-2 span{
+            font-weight: 400;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        /*Contact Box*/
+        .contactBox{
+            width: 100vw;
+            height: fit-content;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container {
+            display: flex;
+            width: 100vw;
+            height: fit-content;
+            overflow: hidden;
+        }
+
+        .left-col {
+            width: 40vw;
+            display: flex;
+            justify-content: center;
+        }
+        .mapouter{
+            width: 30vw;
+            height: 90%;
+            overflow: hidden;
+            margin: 50px 0;
+        }
+        .gmap_canvas iframe{
+            border: transparent;
+        }
+
+        .right-col {
+            width: 50vw;
+            padding: 5rem 3.5rem;
+        }
+
+        .contactBox h1, label, button {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+        }
+
+        .contactBox h1 {
+            color: #ececec;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+            font-weight: 300;
+        }
+
+        .contactBox p {
+            color: #ececec;
+            font-size: 0.9rem;
+            letter-spacing: 0.01rem;
+            width: 40vw;
+            margin: 0.25rem 0;
+        }
+
+        .contactBox label {
+            color: #ececec;
+            text-transform: uppercase;
+            font-size: 0.625rem;
+        }
+
+        .contactBox form {
+            width: 31.25rem;
+            position: relative;
+            margin-top: 2rem;
+            padding: 1rem 0;
+        }
+
+        .contactBox input, textarea, label {
+            width: 40vw;
+            display: block;
+        }
+
+        .contactBox p, input, textarea {
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .contactBox input::placeholder, textarea::placeholder {
+            color: #949494;
+        }
+
+        .contactBox input, textarea {
+            color: #ececec;
+            font-weight: 500;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ececec;
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
+            outline: none;
+        }
+
+        .contactBox textarea {
+            resize: none;
+        }
+
+        .contactBox button {
+            text-transform: uppercase;
+            font-weight: 300;
+            background: #64B915;
+            color: white;
+            width: 10rem;
+            height: 2.25rem;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .contactBox input:hover, textarea:hover, button:hover {
+            opacity: 0.5;
+        }
+
+        .contactBox button:active {
+            opacity: 0.8;
+        }
+        .contactVideo {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        /*Responsive*/
+        @media (max-width: 1000px){
+            .side-menu{
+                width: 100px;
+            }
+            .nagivator{
+                right: 100px;
+            }
+            .locationIcon{
+                left: -17.25em;
+            }
+            .locationIcon img{
+                width: 35em;
+            }
+            .wLocator{
+                top: 10em;
+                left: 22em;
+            }
+
+            .coordinate{
+                font-size: 2em;
+                bottom: 250px;
+                left: -2em;
+            }
+            .services .text{
+                margin-left: 50%;
+            }
+            .P1{
+                height: 800px;
+                margin-left: 24%;
+            }
+            .P2{
+                height: 800px;
+            }
+            .P3{
+                height: 800px;
+            }
+            .contactVideo{
+                width: auto;
+                height: 100%;
+            }
+        }
+        @media (min-height: 930px) {
+            .mmMapBox{
+                width: 750px;
+                height: 750px ;
+            }
+            .mmMap{
+                width: 1500px;
+                top: 60%;
+            }
+            .circle{
+                width: 15px;
+                height: 15px;
+            }
+            .c1{
+                top: 360px;
+                left: 380px;
+            }
+            .c2{
+                top: 465px;
+                left: 275px;
+            }
+            .c3{
+                top: 75px;
+                left: 400px;
+            }
+            .T2-2{
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="homeBox" id="home">
+    <video autoplay loop muted class="bgVideo" src="bgVideo.mp4"></video>
+    <div class="travel">
+        <p>tra</p>
+        <p class="text">vel</p>
+    </div>
+    <div class="side-menu">
+        <a href="#home">
+            <div class="side-logo">
+                <div class="logoText-box">
+                    <div class="logo-text">
+                        travel
+                    </div>
+                    <div class="line">
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="icons">
+            <a href="#weather">
+                <div class="weatheri">
+                    <span class="material-symbols-outlined">
+                        sunny
+                    </span>
+                    <div>
+                        <p>weather</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#services">
+                <div class="servicesi">
+                    <span class="material-symbols-outlined">
+                        mode_of_travel
+                    </span>
+                    <div>
+                        <p>services</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#airTicket">
+                <div class="ticket">
+                    <span class="material-symbols-outlined">
+                        airplane_ticket
+                    </span>
+                    <div>
+                        <p>air ticket</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#hotel">
+                <div class="hotel">
+                    <span class="material-symbols-outlined">
+                        hotel
+                    </span>
+                    <div>
+                        <p>hotel</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="nagivator">
+        <div class="n1">
+            <div class="barBox">
+                <div class="bar">
+                </div>
+            </div>
+            <div class="textBox">
+                <p class="p1">01</p>
+                <p class="p2">kalaw</p>
+            </div>
+            <div class="locatorBox">
+                <div class="locator">
+                    <div class="l1">
+                        <p>location</p>
+                        <div> </div>
+                    </div>
+                    <div class="l2">
+                        <p>kalaw</p>
+                    </div>
+                    <div class="l3">
+                    <span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="n2">
+            <div class="barBox">
+                <div class="bar">
+                </div>
+            </div>
+            <div class="textBox">
+                <p class="p1">02</p>
+                <p class="p2">ngapali</p>
+            </div>
+            <div class="locatorBox">
+                <div class="locator">
+                    <div class="l1">
+                        <p>location</p>
+                        <div> </div>
+                    </div>
+                    <div class="l2">
+                        <p>ngapali</p>
+                    </div>
+                    <div class="l3">
+                    <span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="n3">
+            <div class="barBox">
+                <div class="bar">
+                </div>
+            </div>
+            <div class="textBox">
+                <p class="p1">03</p>
+                <p class="p2">puta-o</p>
+            </div>
+            <div class="locatorBox">
+                <div class="locator">
+                    <div class="l1">
+                        <p>location</p>
+                        <div> </div>
+                    </div>
+                    <div class="l2">
+                        <p>puta-o</p>
+                    </div>
+                    <div class="l3">
+                    <span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weatherBox" id="weather">
+    <div class="weather">
+        <p>weat</p>
+        <p class="text">her</p>
+    </div>
+    <div class="mmMapBox">
+        <div class="circle c1">
+            <div class="showBox sC1">
+                <div class="container">
+                    <div class="text1">
+                        kalaw
+                    </div>
+                    <div class="text2">
+                        myanmar
+                    </div>
+                    <div class="wIcons">
+                        <div class="weatherStatus">
+                            <span class="material-symbols-outlined I1">
+                                cloudy_snowing
+                            </span>
+                            <div class="text">
+                                cloudy snowing
+                            </div>
+                        </div>
+                        <div class="temp">
+                            <span class="material-symbols-outlined I1">
+                                thermostat
+                            </span>
+                            <div class="text">
+                                10 (°C)
+                            </div>
+                        </div>
+                        <div class="wind">
+                            <span class="material-symbols-outlined I1">
+                                air
+                            </span>
+                            <div class="text">
+                                3 mph
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="circle c2">
+            <div class="showBox sC2">
+                <div class="container">
+                    <div class="text1">
+                        ngapali
+                    </div>
+                    <div class="text2">
+                        myanmar
+                    </div>
+                    <div class="wIcons">
+                        <div class="weatherStatus">
+                            <span class="material-symbols-outlined I1">
+                                sunny
+                            </span>
+                            <div class="text">
+                                sunny
+                            </div>
+                        </div>
+                        <div class="temp">
+                            <span class="material-symbols-outlined I1">
+                                thermostat
+                            </span>
+                            <div class="text">
+                                28 (°C)
+                            </div>
+                        </div>
+                        <div class="wind">
+                            <span class="material-symbols-outlined I1">
+                                air
+                            </span>
+                            <div class="text">
+                                8 mph
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="circle c3">
+            <div class="showBox sC3">
+                <div class="container">
+                    <div class="text1">
+                        puta-o
+                    </div>
+                    <div class="text2">
+                        myanmar
+                    </div>
+                    <div class="wIcons">
+                        <div class="weatherStatus">
+                            <span class="material-symbols-outlined I1">
+                                snowing
+                            </span>
+                            <div class="text">
+                                snowing
+                            </div>
+                        </div>
+                        <div class="temp">
+                            <span class="material-symbols-outlined I1">
+                                thermostat
+                            </span>
+                            <div class="text">
+                                10 (°C)
+                            </div>
+                        </div>
+                        <div class="wind">
+                            <span class="material-symbols-outlined I1">
+                                air
+                            </span>
+                            <div class="text">
+                                4 mph
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="mmMap" src="mmMap.png" alt="">
+    </div>
+    <div class="locationIcon">
+        <img src="POI.png" alt="">
+        <div class="wLocator">
+            <div class="wl1">
+                <p>current location</p>
+                <div> </div>
+            </div>
+            <div class="wl2">
+                <p>myanmar</p>
+            </div>
+        </div>
+    </div>
+    <div class="coordinate">
+        21.9162° N, 95.9560° E
+    </div>
+</div>
+<div class="productsBox" id="services">
+    <div class="services">
+        <p>serv</p>
+        <p class="text">ices</p>
+    </div>
+    <div class="P1">
+        <div class="p1-container">
+        </div>
+        <p>kalaw</p>
+        <div class="kalawCoordinate">
+            21.9162° N, 95.9560° E
+        </div>
+        <div class="btnBox">
+            <a href="">
+                <div>view</div>
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </a>
+        </div>
+        <img src="dan-otis-OYFHT4X5isg-unsplash.jpg" alt="">
+    </div>
+    <div class="P2">
+        <div class="p2-container">
+        </div>
+        <p>ngapali</p>
+        <div class="ngapaliCoordinate">
+            21.9162° N, 95.9560° E
+        </div>
+        <div class="btnBox">
+            <a href="">
+                <div>view</div>
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </a>
+        </div>
+        <img src="surfers-riding-waves-atlantic-ocean-toward-shore-nazare-portugal.jpg" alt="">
+    </div>
+    <div class="P3">
+        <div class="p3-container">
+        </div>
+        <p>puta-o</p>
+        <div class="putaoCoordinate">
+            21.9162° N, 95.9560° E
+        </div>
+        <div class="btnBox">
+            <a href="">
+                <div>view</div>
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </a>
+        </div>
+        <img src="beautiful-shot-snowy-mountains-with-dark-blue-sky.jpg" alt="">
+    </div>
+</div>
+<div class="airtBox" id="airTicket">
+    <div class="airTicket">
+        <p>air</p>
+        <p class="text">ticket</p>
+    </div>
+    <div class="container">
+        <div class="T1-box">
+            <div class="T1">
+                <p>from</p>
+                <div> </div>
+            </div>
+            <div class="T1-s">
+                <p>yangon | myanmar</p>
+            </div>
+        </div>
+        <div class="imgBox">
+            <div class="img">
+                <img src="Bitmap.png" alt="">
+            </div>
+            <div class="imgT1-box">
+                <div class="imgT1">
+                    <p>airline</p>
+                    <div> </div>
+                </div>
+                <div class="imgT1-s">
+                    <p>virgin atlantic</p>
+                </div>
+            </div>
+        </div>
+        <div class="T2-box">
+            <div class="T2-1">
+                <div class="s1Box">
+                    <div class="s1">
+                        <p class="d1">
+                            destination
+                        </p>
+                        <p class="d1Text">
+                            kalaw myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $80 USD
+                        </p>
+                        <p class="p1Text2">
+                            (round trip)
+                        </p>
+                    </div>
+                </div>
+                <div class="s2Box">
+                    <div class="s2">
+                        <p class="d1">
+                            destination
+                        </p>
+                        <p class="d1Text">
+                            ngapali myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $100 USD
+                        </p>
+                        <p class="p1Text2">
+                            (round trip)
+                        </p>
+                    </div>
+                </div>
+                <div class="s3Box">
+                    <div class="s3">
+                        <p class="d1">
+                            destination
+                        </p>
+                        <p class="d1Text">
+                            puta-o myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $160 USD
+                        </p>
+                        <p class="p1Text2">
+                            (round trip)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="T2-2">
+                <div class="btnBox">
+                    <div class="btn-txt">
+                        <p>
+                            book
+                        </p>
+                    </div>
+                    <a class="btn" href="">flight
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hotelBox" id="hotel">
+    <div class="txtHotel">
+        <p>luxury</p>
+        <p class="text">hotel</p>
+    </div>
+    <div class="container">
+        <div class="imgBox">
+            <div class="imgT1-box">
+                <div class="imgT1">
+                    <p>hotel</p>
+                    <div> </div>
+                </div>
+                <div class="imgT1-s">
+                    <p>Pan Pacific</p>
+                </div>
+            </div>
+            <div class="img">
+                <img src="Sleep%20Image.png" alt="">
+            </div>
+        </div>
+        <div class="T2-box">
+            <div class="T2-1">
+                <div class="s1Box">
+                    <div class="s1">
+                        <p class="d1">
+                            location
+                        </p>
+                        <p class="d1Text">
+                            kalaw myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $45 USD
+                        </p>
+                        <p class="p1Text2">
+                            (breakfast included)
+                        </p>
+                    </div>
+                </div>
+                <div class="s2Box">
+                    <div class="s2">
+                        <p class="d1">
+                            location
+                        </p>
+                        <p class="d1Text">
+                            ngapali myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $60 USD
+                        </p>
+                        <p class="p1Text2">
+                            (breakfast included)
+                        </p>
+                    </div>
+                </div>
+                <div class="s3Box">
+                    <div class="s3">
+                        <p class="d1">
+                            location
+                        </p>
+                        <p class="d1Text">
+                            puta-o myanmar
+                        </p>
+                        <p class="p1">
+                            pricing
+                        </p>
+                        <p class="p1Text1">
+                            $80 USD
+                        </p>
+                        <p class="p1Text2">
+                            (breakfast included)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="T2-2">
+                <div class="btnBox">
+                    <div class="btn-txt">
+                        <p>
+                            book
+                        </p>
+                    </div>
+                    <a class="btn" href="">hotel
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contactBox">
+    <div class="contact-container">
+        <div class="left-col">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="400" height="500" src="https://maps.google.com/maps?q=yangon%20&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <h1>Contact us</h1>
+            <p>Planning to visit Myanmar soon? Get insider tips on where to go, things to do and find best deals for your next adventure.</p>
+
+            <form id="contact-form" method="post">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                <label for="message">Message</label>
+                <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+                <button type="submit" id="submit" name="submit">Send</button>
+            </form>
+        </div>
+        <video class="contactVideo" autoplay loop muted src="pexels-mikhail-nilov-8435972%20(1).mp4">
+
+        </video>
+    </div>
+</div>
+</body>
+</html>
